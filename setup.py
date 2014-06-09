@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
   fabctx
-  ~~~~~~~~~~
+  ~~~~~~
 
   short + sweet context magic + helpers for fabric scripts.
 
@@ -16,10 +16,7 @@
 """
 from setuptools import setup
 
-__version__ = "0.0.1"
-
-with open("requirements.txt", "r") as f:
-  requires = f.readlines()
+__version__ = "0.0.2"
 
 
 setup(
@@ -32,7 +29,11 @@ setup(
   description=__doc__,
   zip_safe=False,
   platforms='any',
-  install_requires=requires,
+  install_requires=[
+    "fabric==1.6.1",
+    "requests==2.0.1",
+    "simplejson==2.6.2",
+  ],
   packages=[
     'fabctx',
   ],
