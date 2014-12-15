@@ -16,7 +16,7 @@
 """
 from setuptools import setup
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 
 setup(
@@ -30,9 +30,9 @@ setup(
   zip_safe=False,
   platforms='any',
   install_requires=[
-    "fabric==1.6.1",
-    "requests==2.0.1",
-    "simplejson==2.6.2",
+    'fabric==1.6.1',
+    'requests==2.0.1',
+    'simplejson==2.6.2',
   ],
   packages=[
     'fabctx',
