@@ -14,14 +14,22 @@
     * `package <http://packages.python.org/fabctx>`_
 
 """
+try:
+  import multiprocessing
+except ImportError:
+  pass
 from setuptools import setup
 
-__version__ = "0.0.3"
+
+# parse version number
+with open('fabctx/__init__.py') as f:
+  m = re.findall(r'__version__\s*=\s*\'(.*)\'', f.read())
+  version = m[0]
 
 
 setup(
   name='fabctx',
-  version=__version__,
+  version=version,
   url='http://github.com/gregorynicholas/fabctx',
   license='MIT',
   author='gregorynicholas',
@@ -46,6 +54,8 @@ setup(
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
+    'Programming Language :: Python :: 2.6',
+    'Programming Language :: Python :: 2.7',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     'Topic :: Software Development :: Libraries :: Python Modules'
   ]
