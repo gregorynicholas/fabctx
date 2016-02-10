@@ -2,11 +2,15 @@
   fabctx.http
   ~~~~~~~~~~~
 
-  context magic for http.
+  fabric context helpers for http requests.
 
+  http://gregorynicholas.github.io/fabctx
+  :copyright: (c) 2016 by gregorynicholas.
 """
+from __future__ import unicode_literals
 import requests
 import simplejson as json
+
 
 __all__ = ['post']
 

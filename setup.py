@@ -1,54 +1,86 @@
 #!/usr/bin/env python
 """
-  fabctx
-  ~~~~~~
+fabctx
+``````
 
-  short + sweet context magic + helpers for fabric scripts.
+short + sweet context magic + helpers for fabric scripts.
 
 
-    links
-    `````
-
-    * `docs <http://gregorynicholas.github.io/fabctx>`_
-    * `source <http://github.com/gregorynicholas/fabctx>`_
-    * `package <http://packages.python.org/fabctx>`_
+links:
+``````
+* `docs: <http://gregorynicholas.github.io/fabctx>`_
+* `source: <http://github.com/gregorynicholas/fabctx>`_
+* `package: <http://packages.python.org/fabctx>`_
+* `travis-ci: <http://travis-ci.org/gregorynicholas/fabctx>`_
+* `issues: <http://github.com/gregorynicholas/fabctx/issues>`_
+* `development version: <http://github.com/gregorynicholas/fabctx/zipball/master#egg=fabctx-dev>`_
 
 """
 try:
   import multiprocessing
 except ImportError:
   pass
-from setuptools import setup
+
+try:
+  from setuptools import setup
+  from setuptools import find_packages
+except ImportError:
+  from distutils.core import setup
+
+from os import path, listdir
+import fnmatch as fm
+import re
 
 
 # parse version number
-with open('fabctx/__init__.py') as f:
-  m = re.findall(r'__version__\s*=\s*\'(.*)\'', f.read())
-  version = m[0]
+with open('fabctx/__init__.py', 'r') as f:
+  v = re.findall(r'__version__\s*=\s*\'(.*)\'', f.read())
+  __version__ = v[0]
+
+with open("requirements.txt", "r") as f:
+  requires = f.readlines()
 
 
 setup(
   name='fabctx',
-  version=version,
+  version=__version__,
   url='http://github.com/gregorynicholas/fabctx',
-  license='MIT',
   author='gregorynicholas',
   author_email='gn@gregorynicholas.com',
-  description=__doc__,
+
+  description='short + sweet context magic + helpers for fabric scripts.',
+  long_description=__doc__,
+
+  install_requires=requires,
+
+  scripts=[
+  ],
+
+  packages=find_packages(),
+
+  namespace_packages=[
+  ],
+
+  py_modules=[
+  ],
+
+  test_suite='nose.collector',
+  tests_require=[
+    'nose==1.3.7',
+    'nose-cov==1.7',
+    'mock==1.0.1',
+  ],
+
+  include_package_data=True,
+  package_data={'': ['*.txt', '*.cfg', '*.md', '*.yml', '*.yaml']},
+
+  dependency_links = [
+  ],
+  license='MIT',
   zip_safe=False,
   platforms='any',
-  install_requires=[
-    'fabric==1.6.1',
-    'requests==2.0.1',
-    'simplejson==2.6.2',
-  ],
-  packages=[
-    'fabctx',
-  ],
-  dependency_links=[
-  ],
   classifiers=[
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
     'Environment :: Web Environment',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
@@ -56,7 +88,8 @@ setup(
     'Programming Language :: Python',
     'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
+    'Topic :: Internet :: WWW/HTTP',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-    'Topic :: Software Development :: Libraries :: Python Modules'
+    'Topic :: Software Development :: Libraries :: Python Modules',
   ]
 )

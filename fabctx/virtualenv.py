@@ -2,35 +2,42 @@
   fabctx.virtualenv
   ~~~~~~~~~~~~~~~~~
 
-  context magic for virtualenv + virtualenvwrapper.
+  fabric context helpers for virtualenv, virtualenvwrapper.
 
+  http://gregorynicholas.github.io/fabctx
+  :copyright: (c) 2016 by gregorynicholas.
 """
-import os
-from fabric.api import env
+from __future__ import unicode_literals
 from fabctx import ctx
 
+
 __all__ = [
-  'venv_path', 'workon', 'activate_venv',
+  'workon_home', 'get_virtualenv_path',
+  'prefix_workon', 'prefix_activate_virtualenv',
 ]
 
 
-def venv_path(workon_id):
-  with ctx.quiet():
-    if env.env_id in ('local', 'test'):
-      return os.getenv('VIRTUAL_ENV', '')
-    else:
-      return "{}/.virtualenvs/{}".format(ctx.home(), workon_id)
+def workon_home(virtualenv_id, *args, **kwargs):
+  with ctx.warn_only():
+    with ctx.hide('running'):
+      return ctx.getenv('WORKON_HOME', '$HOME/.virtualenvs')
+
+
+def get_virtualenv_path(virtualenv_id, *args, **kwargs):
+  with ctx.warn_only():
+    with ctx.hide('running'):
+      return '{}/{}'.format(workon_home, virtualenv_id)
 
 
 @ctx.contextmanager
-def workon(workon_id):
-  with ctx.shell_env(WORKON_HOME=venv_path(workon_id)):
+def prefix_workon(virtualenv_id, *args, **kwargs):
+  with ctx.shell_env(WORKON_HOME=workon_home(virtualenv_id)):
     with ctx.source('/usr/local/bin/virtualenvwrapper.sh'):
-      with ctx.prefix("workon {}".format(workon_id)):
+      with ctx.prefix("workon {}".format(virtualenv_id)):
         yield
 
 
 @ctx.contextmanager
-def activate_venv():
-  with ctx.prefix("source {}/bin/activate".format(venv_path(''))):
+def prefix_activate_virtualenv(*args, **kwargs):
+  with ctx.prefix("source {}/bin/activate".format(workon_home(''))):
     yield
