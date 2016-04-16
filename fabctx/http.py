@@ -1,11 +1,12 @@
+# encoding: utf-8
 """
   fabctx.http
   ~~~~~~~~~~~
 
   fabric context helpers for http requests.
 
-  http://gregorynicholas.github.io/fabctx
-  :copyright: (c) 2016 by gregorynicholas.
+
+  :copyright: (c) gregorynicholas.
 """
 from __future__ import unicode_literals
 import requests

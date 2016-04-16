@@ -1,11 +1,12 @@
+# encoding: utf-8
 """
   fabctx.virtualenv
   ~~~~~~~~~~~~~~~~~
 
   fabric context helpers for virtualenv, virtualenvwrapper.
 
-  http://gregorynicholas.github.io/fabctx
-  :copyright: (c) 2016 by gregorynicholas.
+
+  :copyright: (c) gregorynicholas.
 """
 from __future__ import unicode_literals
 from fabctx import ctx

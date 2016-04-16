@@ -7,7 +7,7 @@ install:
   - python setup.py install
 
 script:
-  - python setup.py check clean sdist nosetests
+  - python setup.py runtests
 
 branches:
   only:

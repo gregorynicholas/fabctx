@@ -1,19 +1,20 @@
 #!/usr/bin/env python
 """
-fabctx
-``````
+  fabctx
+  ``````
 
-short + sweet context magic + helpers for fabric scripts.
+  short + sweet context magic and helpers for fabric projects.
 
 
-links:
-``````
-* `docs: <http://gregorynicholas.github.io/fabctx>`_
-* `source: <http://github.com/gregorynicholas/fabctx>`_
-* `package: <http://packages.python.org/fabctx>`_
-* `travis-ci: <http://travis-ci.org/gregorynicholas/fabctx>`_
-* `issues: <http://github.com/gregorynicholas/fabctx/issues>`_
-* `development version: <http://github.com/gregorynicholas/fabctx/zipball/master#egg=fabctx-dev>`_
+
+  links:
+  ``````
+  * `docs: <http://gregorynicholas.github.io/fabctx>`_
+  * `source (github): <http://github.com/gregorynicholas/fabctx>`_
+  * `package (pypi): <http://packages.python.org/fabctx>`_
+  * `build (travis-ci): <http://travis-ci.org/gregorynicholas/fabctx>`_
+  * `issues: <http://github.com/gregorynicholas/fabctx/issues>`_
+  * `development version: <http://github.com/gregorynicholas/fabctx/zipball/master#egg=fabctx-dev>`_
 
 """
 try:
@@ -23,62 +24,68 @@ except ImportError:
 
 try:
   from setuptools import setup
-  from setuptools import find_packages
 except ImportError:
-  from distutils.core import setup
+  from ez_setup import use_setuptools
+  use_setuptools()
+  from setuptools import setup
+import setup_utils as sutils
 
-from os import path, listdir
-import fnmatch as fm
-import re
 
-
-# parse version number
-with open('fabctx/__init__.py', 'r') as f:
-  v = re.findall(r'__version__\s*=\s*\'(.*)\'', f.read())
-  __version__ = v[0]
-
-with open("requirements.txt", "r") as f:
-  requires = f.readlines()
+root = 'fabctx'
+name = sutils.parse_project_name(root, __doc__)
+version = sutils.parse_version(root)
 
 
 setup(
-  name='fabctx',
-  version=__version__,
-  url='http://github.com/gregorynicholas/fabctx',
-  author='gregorynicholas',
-  author_email='gn@gregorynicholas.com',
-
-  description='short + sweet context magic + helpers for fabric scripts.',
+  name=name,
+  version=version,
+  url=sutils.parse_homepage(root),
+  author=sutils.parse_author(root),
+  author_email=sutils.parse_author_email(root),
+  description='short + sweet context magic and helpers for fabric ' +
+  'projects.',
   long_description=__doc__,
 
-  install_requires=requires,
+  install_requires=sutils.parse_requirements(),
+  scripts=[],
+  packages=sutils.find_packages(),
+  namespace_packages=[],
 
-  scripts=[
-  ],
-
-  packages=find_packages(),
-
-  namespace_packages=[
-  ],
-
-  py_modules=[
-  ],
+  py_modules=[],
 
   test_suite='nose.collector',
   tests_require=[
-    'nose==1.3.7',
-    'nose-cov==1.7',
-    'mock==1.0.1',
+    'blinker>=1.2',
+    'nose>=1.3.7',
+    'nose-cov>=1.6',
+    'cov-core==1.15.0',
+    'coverage==4.0.3',
+    'mock>=1.0.1',
   ],
 
   include_package_data=True,
   package_data={'': ['*.txt', '*.cfg', '*.md', '*.yml', '*.yaml']},
 
-  dependency_links = [
-  ],
-  license='MIT',
+  cmdclass = {
+    "publish" : sutils.PypiPublish,
+    "runtests" : sutils.RunTests,
+    "build_sphinx" : sutils.BuildSphinx,
+  },
+
+  #: these are optional and override docs.conf.py settings..
+  command_options={
+    'build_sphinx': {
+      'project': ('setup.py', name),
+      'version': ('setup.py', version),
+      'release': ('setup.py', sutils.parse_release(root)),
+      'config-dir': ('setup.py', './docs/'),
+    },
+  },
+
+  dependency_links=[],
   zip_safe=False,
-  platforms='any',
+  license='MIT',
+  platforms=['any'],
   classifiers=[
     'Development Status :: 5 - Production/Stable',
     'Environment :: Web Environment',

@@ -1,13 +1,15 @@
+# encoding: utf-8
 """
   fabctx.ctx
   ~~~~~~~~~~
 
   short + sweet fabric context magic.
 
-  http://gregorynicholas.github.io/fabctx
-  :copyright: (c) 2016 by gregorynicholas.
+
+  :copyright: (c) gregorynicholas.
 """
 from __future__ import unicode_literals
+from pprint import pprint
 from pprint import pformat
 from os import environ
 from os import path
