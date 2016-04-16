@@ -4,7 +4,6 @@ fabctx
 short + sweet context magic and helpers for python fabric scripts.
 
 
-
 <br>
 
 **BUILD-STATUS**
@@ -14,6 +13,7 @@ short + sweet context magic and helpers for python fabric scripts.
 | `master`  | [![build-status (travis-ci): master](https://travis-ci.org/gregorynicholas/fabctx.svg?branch=master)](https://travis-ci.org/gregorynicholas/fabctx/builds)   |
 | `develop` | [![build-status (travis-ci): develop](https://travis-ci.org/gregorynicholas/fabctx.svg?branch=develop)](https://travis-ci.org/gregorynicholas/fabctx/builds) |
 
+<br>
 
 **REFERENCE LINKS**
 
@@ -25,29 +25,27 @@ short + sweet context magic and helpers for python fabric scripts.
 * [build-status (travis-ci)](https://travis-ci.org/gregorynicholas/fabctx/builds)
 
 <br>
------
-<br>
 
-### features
+**FEATURES**
 
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
+* `[TODO]`
+
+
+
+
+
+
+
+
+
 
 <br>
 -----
 <br>
 
-### getting started
+### USAGE
 
-**install**
+**INSTALL**
 
 install via pip:
 
@@ -57,6 +55,6 @@ $ pip install fabctx
 
 <br>
 
-**usage**
+**IMPLEMENTATION**
 
-* [TODO]
+* `[TODO]`

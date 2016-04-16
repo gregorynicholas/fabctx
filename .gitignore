@@ -1,3 +1,6 @@
+*.orig
+
+
 # compiled source
 # ---------------
 *.py[co]

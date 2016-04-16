@@ -55,12 +55,16 @@ setup(
 
   test_suite='nose.collector',
   tests_require=[
-    'blinker>=1.2',
     'nose>=1.3.7',
     'nose-cov>=1.6',
     'cov-core==1.15.0',
+    'mock>=2.0.0',
     'coverage==4.0.3',
-    'mock>=1.0.1',
+    'coveralls==1.1',
+    'pbr>=1.9.1',
+    'funcsigs>=1.0.0',
+    'ordereddict>=1.1',
+    'docopt>=0.6.2',
   ],
 
   include_package_data=True,

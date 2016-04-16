@@ -11,7 +11,7 @@
 from __future__ import unicode_literals
 import re
 import codecs
-import fnmatch as fm
+import fnmatch
 from os import path
 from os import listdir
 try:
@@ -117,4 +117,5 @@ class RunTests(Command):
     system("python setup.py --verbose check --restructuredtext")
     system("python setup.py --verbose build  --force")
     system("python setup.py --verbose build_scripts --force")
-    system("python setup.py nosetests --config nose-local.cfg")
+    system("python setup.py nosetests -v --config nose.cfg")
+    # system("coveralls")
