@@ -4,52 +4,59 @@ fabctx
 short + sweet context magic and helpers for python fabric scripts.
 
 
-<br>
-**build-status:**
-
-`master ` [![travis-ci build-status: master](https://secure.travis-ci.org/gregorynicholas/fabric-ctx.svg?branch=master)](https://travis-ci.org/gregorynicholas/fabric-ctx)
-<br>
-`develop` [![travis-ci build-status: develop](https://secure.travis-ci.org/gregorynicholas/fabric-ctx.svg?branch=develop)](https://travis-ci.org/gregorynicholas/fabric-ctx)
-
-
-**links:**
-
-- [homepage](http://gregorynicholas.github.io/fabric-ctx)
-- [source](http://github.com/gregorynicholas/fabric-ctx)
-- [python-package](http://packages.python.org/fabric-ctx)
-- [changelog](https://github.com/gregorynicholas/fabric-ctx/blob/master/CHANGES.md)
-- [github-issues](https://github.com/gregorynicholas/fabric-ctx/issues)
-- [travis-ci](http://travis-ci.org/gregorynicholas/fabric-ctx)
-
 
 <br>
------
-<br>
+
+**BUILD-STATUS**
+
+| `branch` | `build` |
+| ------ | ----- |
+| `master`  | [![build-status (travis-ci): master](https://travis-ci.org/gregorynicholas/fabctx.svg?branch=master)](https://travis-ci.org/gregorynicholas/fabctx/builds)   |
+| `develop` | [![build-status (travis-ci): develop](https://travis-ci.org/gregorynicholas/fabctx.svg?branch=develop)](https://travis-ci.org/gregorynicholas/fabctx/builds) |
 
 
-### getting started
+**REFERENCE LINKS**
 
-
-install with pip:
-
-    $ pip install fabctx
-
+* [homepage](http://gregorynicholas.github.io/fabric-ctx)
+* [source (github)](http://github.com/gregorynicholas/fabric-ctx)
+* [python-package (pypi)](http://packages.python.org/fabric-ctx)
+* [changelog](https://github.com/gregorynicholas/fabric-ctx/blob/master/CHANGES.md)
+* [github-issues](https://github.com/gregorynicholas/fabric-ctx/issues)
+* [build-status (travis-ci)](https://travis-ci.org/gregorynicholas/fabctx/builds)
 
 <br>
 -----
 <br>
-
 
 ### features
 
-* [todo]
-
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
 
 <br>
 -----
 <br>
 
+### getting started
 
-### example usage
+**install**
 
-* [todo]
+install via pip:
+
+```sh
+$ pip install fabctx
+```
+
+<br>
+
+**usage**
+
+* [TODO]
