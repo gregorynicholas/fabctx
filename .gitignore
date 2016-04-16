@@ -1,9 +1,11 @@
-# python compiled code
+#: PYTHON BYTE-CODE
+#: ----------------
 *.py[co]
 __pycache__
 
-# packages
-*.egg
+#: PYTHON PACKAGING
+#: ----------------
+*.egg*
 *.egg-info
 dist
 build
@@ -16,7 +18,8 @@ develop-eggs
 .installed.cfg
 *.swp
 
-# installer logs
+#: PYTHON PIP
+#: ----------
 pip-log.txt
 
 # unit test / coverage reports
@@ -42,3 +45,4 @@ objects.inv
 
 # osx files
 .DS_Store
+
