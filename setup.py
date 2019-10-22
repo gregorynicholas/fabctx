@@ -39,7 +39,7 @@ setup(
   platforms='any',
   install_requires=[
     'fabric==1.6.1',
-    'requests==2.0.1',
+    'requests==2.20.0',
     'simplejson==2.6.2',
   ],
   packages=[
