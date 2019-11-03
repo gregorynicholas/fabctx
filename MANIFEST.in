@@ -2,3 +2,5 @@ include README.md
 include CHANGES.md
 include LICENSE
 include requirements.txt
+include nose-local.cfg
+recursive-exclude * *.pyc

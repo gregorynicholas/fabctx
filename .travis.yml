@@ -7,7 +7,8 @@ install:
   - python setup.py install
 
 script:
-  - python setup.py check clean sdist nosetests
+  - ulimit -n 10000
+  - python setup.py runtests
 
 branches:
   only:
