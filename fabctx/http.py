@@ -1,12 +1,17 @@
+# encoding: utf-8
 """
   fabctx.http
   ~~~~~~~~~~~
 
-  context magic for http.
+  fabric context helpers for http requests.
 
+
+  :copyright: (c) gregorynicholas.
 """
+from __future__ import unicode_literals
 import requests
 import simplejson as json
+
 
 __all__ = ['post']
 

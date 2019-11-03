@@ -1,38 +1,72 @@
-# python compiled code
+*.orig
+
+
+# compiled source
+# ---------------
 *.py[co]
 __pycache__
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.swp
+*.pyo
+*.pyc
+python
+
+
+# archives
+# --------
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
 
 # packages
+# --------
 *.egg
 *.egg-info
-dist
-build
-eggs
+*-eggs
+.eggs
+dist/
+sdist/
+build/
 parts
-# bin
 var
-sdist
-develop-eggs
 .installed.cfg
-*.swp
 
-# installer logs
-pip-log.txt
 
-# unit test / coverage reports
+# logs, dbs
+# ---------
+*.log
+*.sql
+*.sqlite
+sqlite\.db
+
+
+# test, coverage output
+# ---------------------
+.noseids
 .coverage
 .tox
 
+
 # translations
+# ------------
 *.mo
 
-# mr developer
-.mr.developer.cfg
 
-# sphinx docs
+# sphinx build
+# ------------
 docs/_build
 docs/build
-.DS_Store
 .nojekyll
 searchindex.js
 objects.inv
@@ -40,5 +74,24 @@ objects.inv
 /_static/
 /_sources/
 
-# osx files
+
+# OS files
+# --------
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+
+# COMMON IDEs
+# -----------
+.idea/
+\.project
+.project
+\.pydevproject
+.buildpath
+.mr.developer.cfg
